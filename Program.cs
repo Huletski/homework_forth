@@ -129,46 +129,56 @@ int[] array = CreateArray(length, lowest, hightest);
 PrintArray(array);
 PrintArray(CreateNewArray(array, newLowest, newHightest));
 
-*/
+
 
 
 
 //task4 Найти сумму чисел одномерного массива стоящих на нечетной позиции
-
 /*
-int ReadInt(string message)
+
+int InputNum(string message)
 {
     Console.Write(message);
     return int.Parse(Console.ReadLine()!);
 }
 
-int[] CreateArray(int length, int lowest, int hightest){
+int[] NewArray(int length, int minimum, int maximum)
+{
     int[] array = new int[length];
     Random random = new Random();
+
     for (int i = 0; i < array.Length; i++)
-        array[i] = random.Next(lowest,hightest+1);
+    array[i] = random.Next(minimum,maximum +1);
     return array;
 }
 
-void PrintArray(int[] array){
+void ArrayOutput(int[] array)
+{
     foreach (int element in array)
-        Console.Write($"| {element} ");
+
+    Console.Write($"| {element} ");
     Console.WriteLine();
 }
 
 int Sum(int[] array){
     int sum = 0;
+
     for (int i = 0; i < array.Length; i++)
-        if (i%2!=0) sum += array[i];
+    
+     if (i%2!=0) 
+     {
+     sum += array[i];
+     }
     return sum;
 }
 
-int length = ReadInt("Введите длину массива: ");
-int lowest = 0;
-int hightest = 10;
-int[] array = CreateArray(length, lowest, hightest);
-PrintArray(array);
-Console.WriteLine($"Сумма чисел одномерного массива, стоящих на нечетных позициях: {Sum(array)}");
+int length = InputNum("Please enter length of array: ");
+int minimum = 0;
+int maximun = 10;
+int[] result = NewArray(length, minimum, maximun);
+
+ArrayOutput(result);
+Console.WriteLine($"Product of numbers in one-dimensional array, those in odd positions: {Sum(result)}");
 
 */
 
@@ -176,7 +186,7 @@ Console.WriteLine($"Сумма чисел одномерного массива,
 
 //task5 Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
-
+/*
 
 int Input(string message)
 {
@@ -219,7 +229,7 @@ int[] array = NewArray(length, minimal, maximum);
 PrintArray(array);
 Console.WriteLine("Product of pairs in one-dimensional array :");
 PrintArray(ArrayPairs(array));
-
+*/
 /*
 
 //task6 В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
