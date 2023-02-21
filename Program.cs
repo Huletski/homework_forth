@@ -177,71 +177,79 @@ Console.WriteLine($"Сумма чисел одномерного массива,
 //task5 Найти произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 
 
-/*
-int ReadInt(string message)
+
+int Input(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    return int.Parse(Console.ReadLine());
 }
 
-int[] CreateArray(int length, int lowest, int hightest){
+int[] NewArray(int length, int minimal, int maximum)
+{
     int[] array = new int[length];
     Random random = new Random();
-    for (int i = 0; i < array.Length; i++)
-        array[i] = random.Next(lowest,hightest+1);
+
+        for (int i = 0; i < array.Length; i++)
+        array[i] = random.Next(minimal, maximum +1);
     return array;
 }
 
-void PrintArray(int[] array){
+void PrintArray(int[] array)
+{
     foreach (int element in array)
-        Console.Write($"| {element} ");
+    Console.Write($"| {element} ");
     Console.WriteLine();
 }
 
-int[] MultiplicationPairs(int[] array){
+int[] ArrayPairs(int[] array)
+{
     int length = array.Length/2;
     int[] newArray = new int[length];
+
     for (int i = 0; i < length; i++)
-        newArray[i] = array[i]*array[array.Length-i-1];
+    newArray[i] = array[i]*array[array.Length-i-1];
     return newArray;
 }
 
-int length = ReadInt("Введите длину массива: ");
-int lowest = 0;
-int hightest = 10;
-int[] array = CreateArray(length, lowest, hightest);
+int length = Input("Please enter length of array: ");
+int minimal = 0;
+int maximum = 10;
+int[] array = NewArray(length, minimal, maximum);
 
 PrintArray(array);
-Console.WriteLine("Произведение пар в одномерном массиве:");
-PrintArray(MultiplicationPairs(array));
+Console.WriteLine("Product of pairs in one-dimensional array :");
+PrintArray(ArrayPairs(array));
 
-*/
+/*
 
-// В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
+//task6 В Указанном массиве вещественных чисел найдите разницу между максимальным и минимальным элементом
 
-int ReadInt(string message)
+int InputNum(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    return int.Parse(Console.ReadLine());
 }
 
-double[] CreateArray(int length, int lowest, int hightest){
+double[] CreateArray(int length, int minimum, int maximum){
     double[] array = new double[length];
     Random random = new Random();
+
     for (int i = 0; i < array.Length; i++)
-        array[i] = Math.Round(random.NextDouble()*(hightest-lowest), 2);
+        array[i] = Math.Round(random.NextDouble()*(maximum-minimum), 2);
     return array;
 }
 
-void PrintArray(double[] array){
+void OutputResult(double[] array){
     foreach (double element in array)
+
         Console.Write($"| {element} ");
-    Console.WriteLine();
+        Console.WriteLine();
 }
 
-double DifferenceMaxMin(double[] array){
+double ResultDifference(double[] array){
     double min = array[0];
     double max = array[0];
+
     for (int i = 0; i < array.Length; i++)
     {
         if (array[i]>max) max = array[i];
@@ -250,10 +258,13 @@ double DifferenceMaxMin(double[] array){
     return max-min;
 }
 
-int length = ReadInt("Введите длину массива: ");
-int lowest = 0;
-int hightest = 20;
-double[] array = CreateArray(length, lowest, hightest);
+int length = InputNum("Plese, enter length of array: ");
+int minimum = 0;
+int maximum = 20;
 
-PrintArray(array);
-Console.WriteLine($"Разница между максимальным и минимальным элементом в массиве: {DifferenceMaxMin(array)}");
+double[] array = CreateArray(length, minimum, maximum);
+
+OutputResult(array);
+Console.WriteLine($"diference between maximum and minimun element in array: {ResultDifference(array)}");
+
+*/
