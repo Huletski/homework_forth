@@ -41,41 +41,52 @@ Console.WriteLine($"Сумма чисел одномерного массива,
 
 
 
-int[] CreateArray(int length, int lowest, int hightest){
+int[] NewArray(int length, int minimum, int maximum)
+{
     int[] array = new int[length];
     Random random = new Random();
+
     for (int i = 0; i < array.Length; i++)
-        array[i] = random.Next(lowest,hightest+1);
+
+    array[i] = random.Next(minimum,maximum +1);
     return array;
 }
 
-void PrintArray(int[] array){
+void OutputArray(int[] array)
+{
     foreach (int element in array)
-        Console.Write($"| {element} ");
+    Console.Write($"| {element} ");
     Console.WriteLine();
 }
 
-int ReadInt(string message)
+int InputInt(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    return int.Parse(Console.ReadLine());
 }
 
-int FindAnEvenNumber(int[] array){
+int EvenNumberResult(int[] array)
+{
     int count = 0;
+
     for (int i = 0; i < array.Length; i++)
-        if (array[i]%2==0) count++;
+    
+    if (array[i]%2==0) 
+    {
+    count++;
+    }
     return count;
 }
 
-int length = ReadInt("Введите длину массива: ");
-int lowest = 100;
-int hightest = 999;
-int[] array = CreateArray(length, lowest, hightest);
+int length = InputInt("Please enter length of array:: ");
+int low = 100;
+int high = 999;
+int[] array = NewArray(length, low, high);
 
-PrintArray(array);
-Console.WriteLine($"Количество четных чисел в массиве: {FindAnEvenNumber(array)}");
-Console.WriteLine($"Количество нечетных чисел в массиве: {array.Length-FindAnEvenNumber(array)}");
+OutputArray(array);
+
+Console.WriteLine($"Even numbers in array: {EvenNumberResult(array)}");
+Console.WriteLine($"Odd numbers in array:  {array.Length-EvenNumberResult(array)}");
 
 
 
@@ -145,7 +156,7 @@ OutputArray(CreateArrayNew(array, newLowest, newHightest));
 int InputNum(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    return int.Parse(Console.ReadLine());
 }
 
 int[] NewArray(int length, int minimum, int maximum)
