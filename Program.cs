@@ -39,7 +39,7 @@ Console.WriteLine($"Сумма чисел одномерного массива,
 
 //task2 Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
 
-/*
+
 
 int[] CreateArray(int length, int lowest, int hightest){
     int[] array = new int[length];
@@ -77,43 +77,49 @@ PrintArray(array);
 Console.WriteLine($"Количество четных чисел в массиве: {FindAnEvenNumber(array)}");
 Console.WriteLine($"Количество нечетных чисел в массиве: {array.Length-FindAnEvenNumber(array)}");
 
-*/
+
 
 
 
 //task3 В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99] ???
 
 /*
-int lowest1 = 10;
-int hightest1 = 99;
-Console.WriteLine($"Количество элементов из отрезка [10,99]: {hightest1-lowest1+1}");
+
+int minimum = 10;
+int maximum = 99;
+
+Console.WriteLine($"ellements in piece: [10,99]: {maximum-minimum+1}");
 Console.WriteLine();
 
 
-// Из одномерного массива из 123 чисел ВЫВЕСТИ ЭЛЕМЕНТЫ из отрезка [10,99]
-
-int[] CreateArray(int length, int lowest, int hightest){
+int[] NewArray(int length, int min, int max)
+{
     int[] array = new int[length];
     Random random = new Random();
+
     for (int i = 0; i < array.Length; i++)
-        array[i] = random.Next(lowest,hightest+1);
+    array[i] = random.Next(min,max +1);
     return array;
 }
 
-void PrintArray(int[] array){
+void OutputArray(int[] array)
+{
     foreach (int element in array)
-        Console.Write($"| {element} ");
+
+    Console.Write($"| {element} ");
     Console.WriteLine();
     Console.WriteLine();
 }
 
-int[] CreateNewArray(int[] array, int newLowest, int newHightest){
-    int length = newHightest-newLowest+1;
+int[] CreateArrayNew(int[] array, int lowest, int hightest)
+{
+    int length = hightest-lowest+1;
     int[] newArray = new int[length];
+
     for (int i = 0; i < length; i++)
     {
-        newArray[i] = array[newLowest-1];
-        newLowest++;
+      newArray[i] = array[lowest-1];
+      lowest++;
     }
     return newArray;
 }
@@ -124,13 +130,13 @@ int hightest = 999;
 int newLowest = 10;
 int newHightest = 99;
 
-int[] array = CreateArray(length, lowest, hightest);
+int[] array = NewArray(length, lowest, hightest);
 
-PrintArray(array);
-PrintArray(CreateNewArray(array, newLowest, newHightest));
+OutputArray(array);
+OutputArray(CreateArrayNew(array, newLowest, newHightest));
 
 
-
+*/
 
 
 //task4 Найти сумму чисел одномерного массива стоящих на нечетной позиции
