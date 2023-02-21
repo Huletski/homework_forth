@@ -1,45 +1,56 @@
 ﻿//task1 Найти сумму чисел одномерного массива стоящих на нечетной позиции
 /*
 
-int ReadingInt(string message)
+int Input(string message)
 {
     Console.Write(message);
-    return int.Parse(Console.ReadLine()!);
+    return int.Parse(Console.ReadLine());
 }
 
-int[] NewArray(int length, int lowest, int hightest){
+int[] InputArray(int length, int minimal, int maximal)
+{
     int[] array = new int[length];
     Random random = new Random();
+    
     for (int i = 0; i < array.Length; i++)
-        array[i] = random.Next(lowest,hightest+1);
+    
+    array[i] = random.Next(minimal,maximal+1);
     return array;
 }
 
-void OutputArray(int[] array){
+void OutputArray(int[] array)
+{
     foreach (int element in array)
-        Console.Write($"| {element} ");
+    
+    Console.Write($"| {element} ");
     Console.WriteLine();
 }
 
-int Sum(int[] array){
+int Result(int[] array)
+{
     int sum = 0;
     for (int i = 0; i < array.Length; i++)
-        if (i%2!=0) sum += array[i];
+    
+    if (i%2!=0) 
+    {
+     sum += array[i];
+    }
     return sum;
 }
 
-int length = ReadingInt("Введите длину массива: ");
-int lowest = 0;
-int hightest = 10;
-int[] array = NewArray(length, lowest, hightest);
+int length = Input("Please enter length of array: ");
+int low = 0;
+int hight = 10;
+int[] array = InputArray(length, low, hight);
+
 OutputArray(array);
-Console.WriteLine($"Сумма чисел одномерного массива, стоящих на нечетных позициях: {Sum(array)}");
+Console.WriteLine($"Product of numbers in one-dimensional array in odd position: {Result(array)}");
 
 */
 
 //task2 Задать массив, заполнить случайными положительными трёхзначными числами. Показать количество нечетных\четных чисел
 
-
+/*
 
 int[] NewArray(int length, int minimum, int maximum)
 {
@@ -78,7 +89,7 @@ int EvenNumberResult(int[] array)
     return count;
 }
 
-int length = InputInt("Please enter length of array:: ");
+int length = InputInt("Please enter length of array: ");
 int low = 100;
 int high = 999;
 int[] array = NewArray(length, low, high);
@@ -89,7 +100,7 @@ Console.WriteLine($"Even numbers in array: {EvenNumberResult(array)}");
 Console.WriteLine($"Odd numbers in array:  {array.Length-EvenNumberResult(array)}");
 
 
-
+*/
 
 
 //task3 В одномерном массиве из 123 чисел найти количество элементов из отрезка [10,99] ???
